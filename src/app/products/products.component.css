@@ -1,0 +1,57 @@
+.scroll-banner-container {
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .scroll-content {
+    display: flex;
+    animation: scrollBanner 20s linear infinite;
+  }
+
+
+  .card {
+    flex: 0 0 auto;
+    margin-right: 10px;
+    width: 200px;
+    background-color: rgb(253, 249, 250);
+  }
+
+  .card img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .card-body {
+    background-color: #fff;
+    padding: 10px;
+
+  }
+
+  .text-center{
+    font-family: 'Bebas Neue';
+  }
+
+  p {
+    margin-top: 5em;
+  }
+  
+  h1 {
+    margin-bottom: 3em;
+  }
+
+  .btn{
+    background-color:#211912;
+    color: antiquewhite;
+    height: min-content;
+    margin-top: 100px;
+
+}
+
+  @keyframes scrollBanner {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }

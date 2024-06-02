@@ -1,0 +1,14 @@
+.card{
+    background-color: rgb(253, 249, 250);
+}
+.card-body{
+    background-color:white;
+}
+.my-3{
+    font-family: fantasy, sans-serif ;
+}
+
+.my-2{
+    color: rgb(213, 175, 134);
+    font-family: Arial, Helvetica, sans-serif ;
+}

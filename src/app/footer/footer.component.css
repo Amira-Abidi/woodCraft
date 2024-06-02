@@ -1,0 +1,22 @@
+footer{
+    background-color:#211912
+}
+
+.text-center{
+    color: #baa18c;
+}
+span, h6{
+    color: antiquewhite;
+}
+
+.me-4{
+    padding-right: 10px;
+}
+
+.fas{
+    padding-right: 10px;
+    color: antiquewhite;
+}
+.fab{
+    color: antiquewhite
+}

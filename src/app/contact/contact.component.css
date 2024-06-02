@@ -1,0 +1,29 @@
+body{
+    background-color: rgb(253, 249, 250);
+    color: #211912
+}
+
+.input-group{
+    width: 500px;
+}
+
+.btn{
+    background-color:#211912;
+    color: antiquewhite;
+}
+.text1{
+    font-size: 2em;
+    font-family: 'Bebas Neue';
+    color: #211912;
+}
+
+.container{
+    align-items: center;
+    margin-top: 120px;
+    margin-left: 250px;
+}
+
+.card-body{
+    display: flex;
+    flex-direction: row;
+}
