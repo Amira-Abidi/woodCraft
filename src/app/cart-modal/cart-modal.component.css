@@ -1,0 +1,79 @@
+.cart-modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 250px; /* Reduced width */
+    height: auto; /* Allow height to adjust based on content */
+    max-height: 100%; /* Ensure it does not exceed viewport height */
+    background-color: #271919;
+    color: white;
+    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
+    padding: 15px; /* Adjusted padding */
+    z-index: 1001;
+    overflow-y: auto; /* Allow scrolling if content exceeds height */
+    transition: width 0.3s ease; /* Smooth transition for width changes */
+  }
+  
+  .cart-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Changed to flex-start for compactness */
+  }
+  
+  .close-btn {
+    background: none;
+    color: white;
+    font-size: 24px;
+    border: none;
+    cursor: pointer;
+    align-self: flex-end;
+  }
+  
+  .cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; /* Reduced margin */
+  }
+  
+  .cart-item img {
+    width: 60px; /* Smaller image size */
+    height: 60px; /* Smaller height */
+    object-fit: cover;
+    margin-right: 10px; /* Adjusted margin */
+  }
+  
+  .item-details h4,
+  .item-details p {
+    margin: 0;
+    font-weight: normal;
+  }
+  
+  .cart-summary h5 {
+    font-weight: bold;
+    margin: 15px 0; /* Reduced margin */
+    font-size: 0.9rem; /* Smaller font size */
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .cart-modal {
+      width: 100%; /* Full width on smaller screens */
+      padding: 10px; /* Adjust padding for mobile */
+    }
+  
+    .cart-item img {
+      width: 50px; /* Smaller image size for mobile */
+      height: 50px;
+    }
+  
+    .cart-summary h5 {
+      font-size: 0.8rem; /* Adjust font size for mobile */
+    }
+  
+    .view-cart-btn,
+    .checkout-btn {
+      padding: 6px 8px; /* Adjust button padding for mobile */
+      font-size: 0.8rem; /* Smaller font size for buttons */
+    }
+  }
+  

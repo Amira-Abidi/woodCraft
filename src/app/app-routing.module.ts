@@ -4,18 +4,20 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProductsComponent } from './products/products.component';
-import { DetailsComponent } from './details/details.component';
 import { ContactComponent } from './contact/contact.component';
 import { ProductListComponent } from './product-list/product-list.component';
+import { DetailsComponent } from './details/details.component';
 
 const routes: Routes = [
-  { path: 'header', component: HeaderComponent },
   { path: '', component: HomeComponent },
+  { path: 'header', component: HeaderComponent },
   {path: 'products', component: ProductsComponent },
-  {path: 'details', component: DetailsComponent },
   { path: 'footer', component: FooterComponent },
   { path: 'contact', component: ContactComponent },
-  { path: 'productList', component: ProductListComponent }
+  { path: 'productList', component: ProductListComponent },
+  { path: 'details/:productName', component: DetailsComponent },
+  { path: 'product/:id', component: DetailsComponent },
+  { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 
 @NgModule({

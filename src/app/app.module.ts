@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,9 +13,11 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProductsComponent } from './products/products.component';
-import { DetailsComponent } from './details/details.component';
 import { ContactComponent } from './contact/contact.component';
 import { ProductListComponent } from './product-list/product-list.component';
+import { DetailsComponent } from './details/details.component';
+import { CartModalComponent } from './cart-modal/cart-modal.component';
+
 
 @NgModule({
   declarations: [
@@ -22,9 +26,10 @@ import { ProductListComponent } from './product-list/product-list.component';
     HomeComponent,
     FooterComponent,
     ProductsComponent,
-    DetailsComponent,
     ContactComponent,
-    ProductListComponent
+    ProductListComponent,
+    DetailsComponent,
+    CartModalComponent
   ],
   imports: [
     BrowserModule,
@@ -35,6 +40,7 @@ import { ProductListComponent } from './product-list/product-list.component';
     MatMenuModule
     
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
   providers: [],
   bootstrap: [AppComponent]
 })

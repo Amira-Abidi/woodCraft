@@ -1,0 +1,19 @@
+<!-- cart-modal.component.html -->
+<div class="cart-modal" *ngIf="isOpen">
+    <div class="cart-content">
+      <button class="close-btn" (click)="closeModal()">×</button>
+  
+      <div *ngFor="let product of productsInCart" class="cart-item">
+        <img [src]="product.image" alt="{{ product.caption }}" />
+        <div class="item-details">
+          <h4>{{ product.caption }}</h4>
+          <p>1 × {{ product.price | currency }}</p>
+        </div>
+      </div>
+  
+      <div class="cart-summary">
+        <h5>SUBTOTAL: {{ subtotal | currency }}</h5>
+      </div>
+    </div>
+  </div>
+  
