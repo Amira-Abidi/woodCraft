@@ -17,6 +17,12 @@ import { ContactComponent } from './contact/contact.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { DetailsComponent } from './details/details.component';
 import { CartModalComponent } from './cart-modal/cart-modal.component';
+import { LoginComponent } from './login/login.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { AddProductComponent } from './Admin/add-product/add-product.component';
+import { ProductListAdminComponent } from './Admin/product-list-admin/product-list-admin.component';
+import { UpdateProductModalComponent } from './Admin/update-product-modal/update-product-modal.component';
 
 
 @NgModule({
@@ -29,7 +35,11 @@ import { CartModalComponent } from './cart-modal/cart-modal.component';
     ContactComponent,
     ProductListComponent,
     DetailsComponent,
-    CartModalComponent
+    CartModalComponent,
+    LoginComponent,
+    AddProductComponent,
+    ProductListAdminComponent,
+    UpdateProductModalComponent
   ],
   imports: [
     BrowserModule,
@@ -37,8 +47,9 @@ import { CartModalComponent } from './cart-modal/cart-modal.component';
     BrowserAnimationsModule,
     MatCardModule,
     MatToolbarModule,
-    MatMenuModule
-    
+    MatMenuModule,
+    HttpClientModule,
+    FormsModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
   providers: [],

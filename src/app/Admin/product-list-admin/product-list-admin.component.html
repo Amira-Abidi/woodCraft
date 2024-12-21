@@ -1,0 +1,12 @@
+<div *ngFor="let product of products" class="product-card">
+    <img [src]="product.imageUrl" alt="Product Image" />
+    <p>Name: {{ product.name }}</p>
+    <p>Price: {{ product.price }}€</p>
+  
+    <div class="actions">
+      <button (click)="openCart()" class="btn update-btn">✏️ Update</button>
+      <button (click)="deleteProduct(product._id)" class="btn delete-btn">🗑️ Delete</button>
+    </div>
+  </div>
+
+<app-update-product-modal [isOpen]="isCartOpen"></app-update-product-modal>

@@ -1,118 +1,40 @@
-.scroll-banner-container {
-  overflow-x: auto;
-  white-space: nowrap;
-  padding: 1rem;
-}
-
-.scroll-content {
-  display: flex;
-  animation: scrollBanner 20s linear infinite;
-}
-
-.card {
-  flex: 0 0 auto;
-  margin-right: 10px;
+.product-card {
+  padding: 16px;
+  border: 1px solid #ccc;
+  margin: 16px;
+  text-align: center;
   width: 200px;
-  background-color: rgb(253, 249, 250);
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
 }
 
-.card img {
-  max-width: 100%;
+.product-card:hover {
+  transform: scale(1.05);
+}
+
+.product-card img {
+  width: 100%;
   height: auto;
-  border-radius: 8px 8px 0 0;
+  object-fit: cover;
 }
 
-.card-body {
-  background-color: #fff;
-  padding: 10px;
-  text-align: center;
-}
-
-.text-center {
-  font-family: 'Bebas Neue', sans-serif;
-  text-align: center;
-}
-
-p {
-  margin-top: 5em;
-  font-size: 1.5rem;
-}
-
-h1 {
-  margin-bottom: 3em;
-  font-size: 2.5rem;
-}
-
-.button-container {
-  text-align: center;
-  margin-top: 2rem;
+.actions {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 8px;
 }
 
 .btn {
-  background-color: #211912;
-  color: antiquewhite;
-  padding: 0.7rem 1.5rem;
-  font-size: 1.2rem;
-  border-radius: 5px;
-  text-decoration: none;
-  display: inline-block;
-  margin-top: 1rem;
+  padding: 8px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-/* Responsive styling */
-@media (max-width: 768px) {
-  .card {
-    width: 150px;
-  }
-
-  .scroll-content {
-    animation-duration: 30s;
-  }
-
-  p {
-    font-size: 1.2rem;
-  }
-
-  h1 {
-    font-size: 2rem;
-  }
-
-  .btn {
-    margin-top: 1rem;
-    font-size: 1rem;
-  }
+.update-btn {
+  color: #ffeb3d;
 }
 
-@media (max-width: 480px) {
-  .card {
-    width: 120px;
-  }
-
-  .scroll-content {
-    animation-duration: 40s;
-  }
-
-  p {
-    font-size: 1rem;
-  }
-
-  h1 {
-    font-size: 1.5rem;
-  }
-
-  .btn {
-    font-size: 0.9rem;
-    padding: 0.5rem 1rem;
-  }
-}
-
-@keyframes scrollBanner {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
+.delete-btn {
+  color: #f44336;
 }

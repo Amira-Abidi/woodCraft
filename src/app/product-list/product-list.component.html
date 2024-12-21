@@ -3,7 +3,7 @@
 <div class="container">
   <div class="row">
     <div class="card1" *ngFor="let product of products">
-      <img [src]="product.image" [alt]="product.caption">
+      <img [src]="product.imageUrl"> {{product.name}}
       <div class="button-container">
         <button class="btn heart"><i class="fas fa-heart"></i></button>
         <!-- Replace the cart button with a conditional tick icon -->
@@ -11,7 +11,7 @@
         <button *ngIf="!product.addedToCart" class="btn cart" (click)="addToCart(product)">
           <i class="fas fa-shopping-cart"></i>
         </button>
-        <button class="btn details" (click)="goToDetails(product.id)"><i class="fas fa-arrow-right"></i></button>
+        <button class="btn details" (click)="goToDetails(product._id)"><i class="fas fa-arrow-right"></i></button>
       </div>
       <h5 class="card-title">{{ product.caption }}</h5>
     </div>

@@ -1,57 +1,70 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { NavigationService } from '../services/navigation.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ProductsService } from '../services/product.service';
 
 @Component({
   selector: 'app-details',
   templateUrl: './details.component.html',
   styleUrls: ['./details.component.css']
 })
-export class DetailsComponent implements OnInit {
-  productImage: string = ''; // Main product image
-  productCaption: string = '';
-  productDescription: string = '';
-  productColor: string = '';
-  productDimension: string = '';
-  productMaterial: string = '';
-  productType: string = '';
-  productApplications: string = '';
-  productShape: string = '';
-  additionalImages: string[] = []; // Array to hold the additional images
+export class DetailsComponent implements OnInit {  
+  productImage: any;
+  productCaption: any;
+  productDescription: any;
+  productColor: any = '';
+  productDimension: any = '';
+  productMaterial: any = '';
+  productType: any = '';
+  productApplications: any = '';
+  productShape: any = '';
+  productId: any;
 
-  constructor(private route: ActivatedRoute, private navigationService: NavigationService) { }
+  constructor(
+    private route: ActivatedRoute,
+    private productService: ProductsService,
+    private router: Router
+  ) {}
 
-  ngOnInit() {
-    this.route.paramMap.subscribe(params => {
-      const productId = params.get('id'); // Get the product ID from the URL
-      const image = this.route.snapshot.queryParamMap.get('image'); // Get the image from query params
-      const caption = this.route.snapshot.queryParamMap.get('caption');
-      const description = this.route.snapshot.queryParamMap.get('description');
-      const color = this.route.snapshot.queryParamMap.get('color');
-      const dimension = this.route.snapshot.queryParamMap.get('dimension');
-      const material = this.route.snapshot.queryParamMap.get('material');
-      const type = this.route.snapshot.queryParamMap.get('type');
-      const applications = this.route.snapshot.queryParamMap.get('applications');
-      const shape = this.route.snapshot.queryParamMap.get('shape');
-      if (productId) {
-        this.loadProductDetails(image, caption, description, color, dimension, material, type, applications, shape);
+  ngOnInit(): void {
+    // Retrieve the productId from the route params
+    this.route.paramMap.subscribe((params) => {
+      this.productId = params.get('id') || ''; // Retrieve the productId from the route params
+      console.log(this.productId);
+      
+      // If productId is present, fetch the product details
+      if (this.productId) {
+        this.loadProductDetails(this.productId);
       }
     });
   }
 
-  loadProductDetails(image: any, caption:any, description:any, color:any, dimension:any, material:any, type: any, applications:any, shape:any) {
-    // Set the main product image and additional images based on the product ID
-    this.productImage = image; // Set the main product image from query params
-    this.productCaption = caption
-    this.productDescription = description
-    this.productColor = color
-    this.productDimension = dimension
-    this.productMaterial = material
-    this.productType = type
-    this.productApplications = applications
-    this.productShape = shape
-
+  loadProductDetails(productId: string): void {
+    this.productService.getProductById(productId).subscribe({
+      next: (product) => {
+        // Set product details
+        this.productImage = product.imageUrl || '';
+        this.productCaption = product.name || '';
+        this.productDescription = product.description || '';
+            },
+      error: (error) => {
+        console.error('Failed to load product details', error);
+      },
+    });
   }
 
- 
+  itemCount = 0;
+  
+  productsInCart: any[] = [];
+
+  isCartOpen = false;
+
+  openCart() {
+    this.isCartOpen = true;
+  }
+
+  addToCart(product: any) {
+    this.itemCount++;
+    product.addedToCart = true;
+    this.productsInCart.push(product);
+  }
 }

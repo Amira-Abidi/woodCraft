@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { NavigationService } from '../services/navigation.service';
-import { ProductsService } from '../services/product.service';
+import { ProductsService } from 'src/app/services/product.service';
 
 @Component({
-  selector: 'app-products',
-  templateUrl: './products.component.html',
-  styleUrls: ['./products.component.css']
+  selector: 'app-product-list-admin',
+  templateUrl: './product-list-admin.component.html',
+  styleUrls: ['./product-list-admin.component.css']
 })
-export class ProductsComponent implements OnInit {
+export class ProductListAdminComponent implements OnInit {
 
   products: any[] = [];
 
@@ -30,9 +29,22 @@ export class ProductsComponent implements OnInit {
     });
   }
 
-  //constructor(private navigationService: NavigationService) { }
+  isCartOpen = false;
+  
 
-    //navigateToDetailsSection(sectionId: string) {
-      //  this.navigationService.navigateToSection(sectionId);
-    //}
+  openCart() {
+    this.isCartOpen = true;
+  }
+
+
+  deleteProduct(id: any) {
+    this.productService.deleteProduct(id).subscribe({
+      next: () => {
+        console.log('Product deleted successfully');
+        window.location.reload();
+      },
+      error: error => console.error('Failed to delete product', error)
+    });
+  }
+
 }

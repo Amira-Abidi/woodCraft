@@ -1,0 +1,121 @@
+/* Section Styling */
+.form-section {
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full height section */
+    background-color: rgba(183, 218, 167, 0.392);
+}
+
+/* Global Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Card styling */
+.card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    max-width: 600px;
+    width: 100%;
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+  }
+
+/* Responsive Styling for Large Screens */
+@media (min-width: 992px) {
+    .card-body {
+        padding: 3rem;
+        max-width: 800px; /* Increase card width for larger screens */
+    }
+
+    .input-group {
+        max-width: 600px;
+    }
+
+    .btn {
+        padding: 0.8rem 1.7rem;
+        font-size: 1.1rem;
+    }
+
+    .text1 {
+        font-size: 2.2em;
+    }
+}
+
+/* Responsive Styling for Medium Screens */
+@media (max-width: 768px) {
+    .card-body {
+        padding: 1.5rem;
+        max-width: 90%;
+    }
+
+    .input-group {
+        max-width: 400px;
+    }
+
+    .btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    .text1 {
+        font-size: 1.8em;
+    }
+}
+
+/* Responsive Styling for Small Screens */
+@media (max-width: 480px) {
+    .card-body {
+        padding: 1rem;
+        max-width: 100%;
+    }
+
+    .input-group {
+        max-width: 100%;
+    }
+
+    .btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+    }
+
+    .text1 {
+        font-size: 1.5em;
+    }
+}
+
+/* Form and button styles */
+.input-group {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.btn {
+    background-color: #211912;
+    color: antiquewhite;
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.text1 {
+    font-size: 2em;
+    font-family: 'Bebas Neue', sans-serif;
+    color: #211912;
+    text-align: center;
+    margin-bottom: 2rem;
+}

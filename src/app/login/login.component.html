@@ -1,0 +1,35 @@
+<body>
+    <section class="form-section">
+        <div class="card-body">
+            <div class="container">
+                <div class="text1">Connecter en tant qu'administrateur</div>
+            </div>
+            <form (submit)="onLogin()">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-envelope mr-2"></i></span>
+                    </div>
+                    <input type="email" id="email" (ngModel)="email" name="email" required />
+                </div>
+
+                <label for="password">Mot de passe</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-key mr-2"></i></span>
+                    </div>
+                    <input type="password" id="password" (ngModel)="password" name="password" required />
+                </div>
+                <br>
+                
+                <div *ngIf="errorMessage" class="error-message">
+                    {{ errorMessage }}
+                  </div>
+
+                <button type="submit" class="btn">Connecter</button>
+            </div>
+            </form>
+            </div>
+    </section>
+</body>

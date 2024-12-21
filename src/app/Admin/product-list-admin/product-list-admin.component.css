@@ -1,0 +1,41 @@
+.product-card {
+    padding: 16px;
+    border: 1px solid #ccc;
+    margin: 16px;
+    text-align: center;
+    width: 200px;
+    display: inline-block;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+  }
+  
+  .product-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .product-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  .actions {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 8px;
+  }
+  
+  .btn {
+    padding: 8px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .update-btn {
+    color: #ffeb3d;
+  }
+  
+  .delete-btn {
+    color: #f44336;
+  }
+  

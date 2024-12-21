@@ -3,53 +3,16 @@
   <h1 class="text-center">Recent products</h1>
   <div class="scroll-banner-container">
   <div class="scroll-content">
-
-        <!-- Card 1 -->
-        <div class="card">
-          <img src="assets/cone.png">
-          <div class="card-body">
-            <h5 class="card-title">Wooden Cones</h5>
-          </div>
-        </div>
-       <!-- Card 2 -->
-       <div class="card">
-        <img src="assets/abaisse-langue.png">
-        <div class="card-body">
-          <h5 class="card-title">Abaisse langue</h5>
-        </div>
-      </div>
-       <!-- Card 3 -->
-       <div class="card">
-        <img src="assets/feu-bois.png">
-        <div class="card-body">
-          <h5 class="card-title">Feu en bois</h5>
-        </div>
-      </div>
-      <!-- Card 5 -->
-      <div class="card">
-        <img src="assets/verre.avif">
-        <div class="card-body">
-          <h5 class="card-title">Verre</h5>
-        </div>
-      </div>
-      <!-- Card 6 -->
-      <div class="card">
-        <img src="assets/plat.png">
-        <div class="card-body">
-          <h5 class="card-title">Plateaux</h5>
-        </div>
-      </div>
-      <!-- Card 7 -->
-      <div class="card">
-        <img src="assets/barquette-bateau-bois.png">
-        <div class="card-body">
-          <h5 class="card-title">barquette bateau bois</h5>
-        </div>
-      </div>
-</div>
-</div>
+    <div *ngFor="let product of products" class="product-card">
+      <img [src]="product.imageUrl" alt="Product Image" />
+      <p>Name: {{ product.name }}</p>
+      <p>Price: {{ product.price }}€</p>
+     </div>
+     </div>
+     </div>
 <div class="button-container">
   <a href="productList" type="submit" class="btn">Products &nbsp;<i class="fas fa-arrow-right"></i></a>
 </div>
+<br>
 </body>
 
