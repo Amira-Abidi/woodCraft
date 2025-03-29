@@ -14,6 +14,7 @@ export class ProductListComponent implements OnInit {
   productsInCart: any[] = [];
   isCartOpen = false;
   products: any[] = [];
+  p: number = 1;
   private selectedProductSource = new BehaviorSubject<any>(null);
   selectedProduct$ = this.selectedProductSource.asObservable();
 

@@ -162,6 +162,20 @@ img {
     z-index: 10;      /* Ensure it appears above other elements */
 }
 
+.product-price {
+  font-weight: 500;
+  font-size: 14px;
+  color: #726659;
+}
+
+.product-name {
+  font-weight: bold;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #2B2118;
+}
+
 @media (max-width: 768px) {
     .card1 {
         flex: 0 0 calc(50% - 20px); /* 2 cards per row */
@@ -186,3 +200,10 @@ img {
         padding-top: 30px;
     }
 }
+
+/* Pagination Controls Styling */
+pagination-controls {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+  }

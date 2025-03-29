@@ -29,6 +29,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { ThankYouComponent } from './thank-you/thank-you.component';
+import { WhatWeOfferComponent } from './what-we-offer/what-we-offer.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
@@ -47,7 +49,8 @@ import { ThankYouComponent } from './thank-you/thank-you.component';
     UpdateProductModalComponent,
     ManageProductsComponent,
     CheckoutComponent,
-    ThankYouComponent
+    ThankYouComponent,
+    WhatWeOfferComponent
   ],
   imports: [
     BrowserModule,
@@ -62,7 +65,9 @@ import { ThankYouComponent } from './thank-you/thank-you.component';
     MatDialogModule,
     MatStepperModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    BrowserAnimationsModule,
+    NgxPaginationModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
   providers: [],

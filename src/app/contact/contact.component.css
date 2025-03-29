@@ -4,8 +4,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Full height section */
-    background-color: rgb(253, 249, 250);
+    height: 100vh;
 }
 
 /* Global Styles */

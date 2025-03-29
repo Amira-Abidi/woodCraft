@@ -25,6 +25,7 @@
     "browser-module": "^0.0.1",
     "firebase-tools": "^13.10.2",
     "gsap": "^3.12.7",
+    "ngx-pagination": "^6.0.3",
     "nodemailer": "^6.10.0",
     "npx": "^10.2.2",
     "rxjs": "~7.8.0",

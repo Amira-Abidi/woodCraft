@@ -13,6 +13,7 @@ import { ManageProductsComponent } from './Admin/manage-products/manage-products
 import { FormsModule } from '@angular/forms';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { ThankYouComponent } from './thank-you/thank-you.component';
+import { WhatWeOfferComponent } from './what-we-offer/what-we-offer.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'manageProducts', component: ManageProductsComponent },
   { path: 'checkout', component: CheckoutComponent },
   { path: 'thankYou', component: ThankYouComponent },
+  { path: 'WhatWeOffer', component: WhatWeOfferComponent },
   { path: 'details/:productName', component: DetailsComponent },
   { path: 'product/:id', component: DetailsComponent },
   { path: '**', redirectTo: '', pathMatch: 'full' }
