@@ -19,10 +19,16 @@ import { DetailsComponent } from './details/details.component';
 import { CartModalComponent } from './cart-modal/cart-modal.component';
 import { LoginComponent } from './login/login.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
 import { AddProductComponent } from './Admin/add-product/add-product.component';
-import { ProductListAdminComponent } from './Admin/product-list-admin/product-list-admin.component';
 import { UpdateProductModalComponent } from './Admin/update-product-modal/update-product-modal.component';
+import { ManageProductsComponent } from './Admin/manage-products/manage-products.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { ThankYouComponent } from './thank-you/thank-you.component';
 
 
 @NgModule({
@@ -38,8 +44,10 @@ import { UpdateProductModalComponent } from './Admin/update-product-modal/update
     CartModalComponent,
     LoginComponent,
     AddProductComponent,
-    ProductListAdminComponent,
-    UpdateProductModalComponent
+    UpdateProductModalComponent,
+    ManageProductsComponent,
+    CheckoutComponent,
+    ThankYouComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +57,12 @@ import { UpdateProductModalComponent } from './Admin/update-product-modal/update
     MatToolbarModule,
     MatMenuModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    MatDialogModule,
+    MatStepperModule,
+    MatInputModule,
+    MatButtonModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
   providers: [],

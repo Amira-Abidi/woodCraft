@@ -20,13 +20,16 @@ export class LoginComponent {
     this.authService.login(this.email, this.password).subscribe({
       next: (response) => {
         console.log('API Response:', response);
-        if (response = true) {
+        if (response?.role) {
+          if (response.role === 'admin') {
+          console.log('User Role:', response.role);
           console.log('Login successful:', response.message);
-          this.router.navigate(['/AddProduct']);
+          this.router.navigate(['/manageProducts']);
         } else {
           console.error('Login failed - API response indicates failure');
           this.errorMessage = 'Login failed: ' + (response.message || 'Unknown error');
         }
+      }
       },
       error: (err) => {
         console.error('Login failed:', err);

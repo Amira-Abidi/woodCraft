@@ -15,9 +15,10 @@ export class DetailsComponent implements OnInit {
   productDimension: any = '';
   productMaterial: any = '';
   productType: any = '';
-  productApplications: any = '';
   productShape: any = '';
   productId: any;
+  ProductAvailability: any = '';
+  availability: string = '';
 
   constructor(
     private route: ActivatedRoute,
@@ -26,45 +27,37 @@ export class DetailsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // Retrieve the productId from the route params
     this.route.paramMap.subscribe((params) => {
-      this.productId = params.get('id') || ''; // Retrieve the productId from the route params
+      this.productId = params.get('id') || '';
       console.log(this.productId);
-      
-      // If productId is present, fetch the product details
       if (this.productId) {
         this.loadProductDetails(this.productId);
       }
     });
-  }
+    }
+  
 
   loadProductDetails(productId: string): void {
     this.productService.getProductById(productId).subscribe({
       next: (product) => {
-        // Set product details
         this.productImage = product.imageUrl || '';
         this.productCaption = product.name || '';
         this.productDescription = product.description || '';
+        this.ProductAvailability = product.availability || '';
+        if (this.ProductAvailability === true) {
+          this.availability = 'In Stock';
+        } else {
+          this.availability = 'Out Of Stock';
+        };
+        this.productColor = product.color || '';
+        this.productDimension = product.dimension || '';
+        this.productMaterial = product.material || '';
+        this.productType = product.productType || '';
+        this.productShape = product.form || '';
             },
       error: (error) => {
         console.error('Failed to load product details', error);
       },
     });
-  }
-
-  itemCount = 0;
-  
-  productsInCart: any[] = [];
-
-  isCartOpen = false;
-
-  openCart() {
-    this.isCartOpen = true;
-  }
-
-  addToCart(product: any) {
-    this.itemCount++;
-    product.addedToCart = true;
-    this.productsInCart.push(product);
   }
 }

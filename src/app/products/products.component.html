@@ -1,17 +1,13 @@
 <body>
   <p class="text-center">Shop items</p>
   <h1 class="text-center">Recent products</h1>
-  <div class="scroll-banner-container">
-  <div class="scroll-content">
-    <div *ngFor="let product of products" class="product-card">
-      <img [src]="product.imageUrl" alt="Product Image" />
-      <p>Name: {{ product.name }}</p>
-      <p>Price: {{ product.price }}€</p>
-     </div>
-     </div>
-     </div>
+    <div class="product-container" *ngFor="let product of products">
+      <img [src]="product.imageUrl" alt="Product Image" class="product-card"/><br>
+       <span class="product-name">{{ product.name }}</span><br>
+       <span class="product-price">{{ product.price }}€</span>
+    </div>
 <div class="button-container">
-  <a href="productList" type="submit" class="btn">Products &nbsp;<i class="fas fa-arrow-right"></i></a>
+  <a href="productList" type="submit" class="btn">Shop Now</a>
 </div>
 <br>
 </body>

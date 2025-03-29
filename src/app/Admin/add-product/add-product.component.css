@@ -4,14 +4,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
     background-color: rgb(253, 249, 250);
-}
-
-/* Global Styles */
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
 }
 
 /* Card styling */
@@ -27,6 +21,48 @@ body {
     width: 100%;
 }
 
+/* Form Styling */
+form {
+    width: 100%;
+}
+
+/* Label Styling */
+label {
+    font-weight: bold;
+    display: block;
+    margin-top: 12px;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Input Fields */
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: border 0.3s ease-in-out;
+}
+
+/* Focus Effect on Input */
+.input-group input:focus {
+    border: 1px solid #211912;
+    outline: none;
+}
+
+/* File Upload Input */
+.form-field input[type="file"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Button Styling */
 .btn {
     background-color: #211912;
     color: antiquewhite;
@@ -35,8 +71,16 @@ body {
     border-radius: 5px;
     border: none;
     cursor: pointer;
+    width: 100%;
+    margin-top: 15px;
+    transition: all 0.3s ease-in-out;
 }
 
+.btn:hover {
+    background-color: #3a2d22;
+}
+
+/* Title Styling */
 .text1 {
     font-size: 2em;
     font-family: 'Bebas Neue', sans-serif;
@@ -49,7 +93,7 @@ body {
 @media (min-width: 992px) {
     .card-body {
         padding: 3rem;
-        max-width: 800px; /* Increase card width for larger screens */
+        max-width: 800px;
     }
 
     .btn {
@@ -95,4 +139,3 @@ body {
         font-size: 1.5em;
     }
 }
-

@@ -1,7 +1,18 @@
-<!-- cart-modal.component.html -->
-<div class="cart-modal" *ngIf="isOpen">
-    <div class="cart-content">
-      <button class="close-btn" (click)="closeModal()">×</button>
-    </div>
-  </div>
-  
+<form [formGroup]="updateProductForm">
+  <label>Nom du produit:</label>
+  <input formControlName="name" type="text"/>
+  <br>
+  <label>Description:</label>
+  <input formControlName="description" type="text-area"/>
+  <br>
+  <label>Price:</label>
+  <input formControlName="price" type="number"/>
+  <br>
+  <label>Materiel:</label>
+  <input formControlName="material" type="text"/>
+  <br>
+  <label>Product Image:</label>
+  <input type="file" id="imageInput" accept="image/*" />
+  <br>
+  <button type="button" (click)="updateProduct()">Update Product</button>
+</form>

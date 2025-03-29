@@ -1,16 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ProductsService } from 'src/app/services/product.service';
+import { UpdateProductModalComponent } from '../update-product-modal/update-product-modal.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
-  selector: 'app-product-list-admin',
-  templateUrl: './product-list-admin.component.html',
-  styleUrls: ['./product-list-admin.component.css']
+  selector: 'app-manage-products',
+  templateUrl: './manage-products.component.html',
+  styleUrls: ['./manage-products.component.css']
 })
-export class ProductListAdminComponent implements OnInit {
+export class ManageProductsComponent {
+  selectedProduct: any = {};
 
   products: any[] = [];
 
-  constructor(private productService: ProductsService) {}
+  constructor(private productService: ProductsService, private dialog: MatDialog) {}
 
   ngOnInit() {
     this.productService.getProducts().subscribe({
@@ -29,14 +32,6 @@ export class ProductListAdminComponent implements OnInit {
     });
   }
 
-  isCartOpen = false;
-  
-
-  openCart() {
-    this.isCartOpen = true;
-  }
-
-
   deleteProduct(id: any) {
     this.productService.deleteProduct(id).subscribe({
       next: () => {
@@ -47,4 +42,19 @@ export class ProductListAdminComponent implements OnInit {
     });
   }
 
+ openModal(product: any) {
+  const dialogRef = this.dialog.open(UpdateProductModalComponent, {
+    width: '400px',
+    data: { product }
+  });
+
+  dialogRef.afterClosed().subscribe(updatedProduct => {
+    if (updatedProduct) {
+      console.log('Updated Product:', updatedProduct);
+    }
+  });
+
+  }
+
 }
+

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { NavigationService } from '../services/navigation.service';
 import { ProductsService } from '../services/product.service';
 
 @Component({
@@ -25,14 +24,9 @@ export class ProductsComponent implements OnInit {
           material: product.material || product._doc?.material,
           imageUrl: `${product.imageUrl}`
         }));
+        
       },
       error: error => console.error('Failed to load products', error)
     });
   }
-
-  //constructor(private navigationService: NavigationService) { }
-
-    //navigateToDetailsSection(sectionId: string) {
-      //  this.navigationService.navigateToSection(sectionId);
-    //}
 }

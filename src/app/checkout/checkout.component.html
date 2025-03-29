@@ -1,0 +1,66 @@
+<!-- Rest of your form and steps -->
+<mat-horizontal-stepper #stepper>
+  <!-- Step 1: Review Products -->
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Review Products</ng-template>
+      <div *ngFor="let product of productsInCart">
+        <p>{{ product.name }} - Quantity: {{ product.quantity }}</p>
+      </div>
+      <div>
+        <p>Total Price: {{ totalPrice | currency }}</p>
+      </div>
+      <div>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+
+  <!-- Step 2: User Information -->
+  <mat-step [stepControl]="secondFormGroup">
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>User Information</ng-template>
+      <mat-form-field>
+        <mat-label>Full Name</mat-label>
+        <input matInput formControlName="fullName" required>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Phone Number</mat-label>
+        <input matInput formControlName="phoneNumber" required>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Location</mat-label>
+        <input matInput formControlName="location" required>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext [disabled]="secondFormGroup.invalid">Next</button>
+      </div>
+    </form>
+  </mat-step>
+
+  <!-- Step 3: Confirmation -->
+  <mat-step>
+    <ng-template matStepLabel>Confirmation</ng-template>
+    <h2>Confirm Your Order</h2>
+    <p><strong>Name:</strong> {{ secondFormGroup.value.fullName }}</p>
+    <p><strong>Email:</strong> {{ secondFormGroup.value.email }}</p>
+    <p><strong>Phone:</strong> {{ secondFormGroup.value.phoneNumber }}</p>
+    <p><strong>Location:</strong> {{ secondFormGroup.value.location }}</p>
+    <h3>Order Summary:</h3>
+    <div *ngFor="let product of productsInCart">
+      <p>{{ product.name }} - Quantity: {{ product.quantity }} - Price: {{ product.price | currency }}</p>
+    </div>
+    <h4>Total Price: {{ totalPrice | currency }}</h4>
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <app-spinner *ngIf="isLoading" class="reload-icon"></app-spinner>
+      <button mat-button (click)="confirmOrder()" div *ngIf="!isLoading">Confirm Order</button>
+    </div>
+  </mat-step>
+</mat-horizontal-stepper>
+

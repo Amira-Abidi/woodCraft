@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProductsService {
-  private apiUrl = 'http://localhost:3000/products';
+  private apiUrl = 'http://localhost:3001/products';
 
   constructor(private http: HttpClient) {}
 
@@ -28,10 +28,19 @@ export class ProductsService {
     return this.http.delete(`${this.apiUrl}/${id}`);
   }
 
-  updateProduct(id: string, productData: any): Observable<any> {
-    return this.http.patch(`${this.apiUrl}/${id}`, productData);
+  updateProduct(id: string, productData: any, file?: File): Observable<any> {
+    const formData = new FormData();
+    formData.append('name', productData.name);
+    formData.append('price', productData.price);
+  
+    if (file) {
+      formData.append('image', file);
+    }
+  
+    return this.http.put(`${this.apiUrl}/${id}`, formData);
   }
-
+  
+  
   getProductById(productId: string): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/${productId}`);
   }

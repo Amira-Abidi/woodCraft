@@ -18,10 +18,23 @@
             <a href="contact" class="nav-link">Contact</a>
           </li>
           <li class="nav-item">
-            <a href="products" class="nav-link">Products</a>
+            <a href="productList" class="nav-link">Product List</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" *ngIf="!role">
             <a href="login" class="nav-link">Login</a>
+          </li>
+          
+  
+          <li class="nav-item" *ngIf="role === 'admin'">
+            <a href="manageProducts" class="nav-link">Manage Products</a>
+          </li>
+
+          <li class="nav-item" *ngIf="role === 'admin'">
+            <a href="AddProduct" class="nav-link">Add Product</a>
+          </li>
+  
+          <li class="nav-item" *ngIf="role">
+            <a (click)="logout()" class="nav-link" style="cursor: pointer;">Logout</a>
           </li>
         </ul>
       </div>
@@ -37,6 +50,10 @@
 
   <!-- Floating Social Media Buttons -->
   <div class="social-media-icons">
+    <div target="_blank" class="social-btn">
+      <i class="fas fa-shopping-cart"  (click)="openCart()"></i>
+      <span *ngIf="itemCount > 0" class="item-count">{{ itemCount }}</span>
+    </div>
     <a href="https://www.instagram.com" target="_blank" class="social-btn">
       <i class="fab fa-instagram"></i>
     </a>
@@ -51,4 +68,8 @@
   <!-- Scroll Buttons -->
   <button class="scroll-btn scroll-up" (click)="scrollToTop()">↑</button>
   <button class="scroll-btn scroll-down" (click)="scrollToBottom()">↓</button>
+
+  <!-- Cart Modal Component -->
+  <app-cart-modal [isOpen]="isCartOpen" [productsInCart]="productsInCart"></app-cart-modal>
 </body>
+

@@ -53,6 +53,26 @@
     margin: 15px 0; /* Reduced margin */
     font-size: 0.9rem; /* Smaller font size */
   }
+
+  .cart-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  
+  button {
+    font-weight: bold;
+    padding: 10px 20px;
+  }
+  
+  button mat-icon {
+    margin-right: 8px;
+  }
+  
+  button.mat-raised-button {
+    text-transform: capitalize;
+  }
+  
   
   /* Responsive Styles */
   @media (max-width: 768px) {

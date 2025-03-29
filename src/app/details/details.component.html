@@ -4,7 +4,7 @@
       <!-- Main Product Image -->
       <div class="col-12 col-sm-6">
         <div class="card">
-          <img [src]="productImage" class="product-image" alt="Product Image" />
+          <img [src]="productImage" class="product-image" alt="Product Image"/>
         </div>
       </div>
 
@@ -13,42 +13,22 @@
         <h2 class="my-3">{{ productCaption }}</h2>
         <p>{{ productDescription }}</p>
         <hr />
-        <h4><b>Available Sizes</b></h4>
+        <h4><b>Availability</b></h4>
         <div class="btn-group btn-group-toggle" data-toggle="buttons">
           <label class="btn btn-default text-center">
             <input type="radio" name="size_option" id="size_option_s" autocomplete="off" />
-            <span class="text-xl">S</span><br />Small
-          </label>
-          <label class="btn btn-default text-center">
-            <input type="radio" name="size_option" id="size_option_b" autocomplete="off" />
-            <span class="text-xl">B</span><br />Big
+            <span>{{availability}}</span><br/>
           </label>
         </div>
-        <h4 class="mt-3"><b>Availability of the product</b></h4>
-        <b>In Stock</b>
         <div class="details">
           <br /><b>Couleur:</b> {{ productColor }}<br />
           <b>Dimension:</b> {{ productDimension }}<br />
           <b>Material:</b> {{ productMaterial }}<br />
           <b>Product Type:</b> {{ productType }}<br />
-          <b>Applications:</b> {{ productApplications }}<br />
           <b>Shape:</b> {{ productShape }}
         </div>
-        <br /><br />
-        <button *ngIf="!productId.addedToCart" class="btn cart" (click)="addToCart(productId)">
-          <i class="fas fa-shopping-cart"></i>
-        </button>
       </div>
     </div>
   </div>
-
-  <!-- Cart Icon -->
-<div class="cart-icon" (click)="openCart()">
-  <i class="fas fa-shopping-cart"></i>
-  <span *ngIf="itemCount > 0" class="item-count">{{ itemCount }}</span>
-</div>
-
-<!-- Cart Modal -->
-<app-cart-modal [isOpen]="isCartOpen" [productsInCart]="productsInCart"></app-cart-modal>
 
 </section>

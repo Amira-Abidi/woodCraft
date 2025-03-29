@@ -51,7 +51,7 @@ export class AddProductComponent {
         };
 
         await this.productService.createProduct(productData).toPromise();
-        this.route.navigateByUrl('ProductListAdminComponent')
+        this.route.navigateByUrl('manageProducts')
 
       } catch (error) {
         console.error('Erreur d\'upload', error);
