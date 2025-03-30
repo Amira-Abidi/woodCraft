@@ -31,7 +31,15 @@ export class ProductsService {
   updateProduct(id: string, productData: any, file?: File): Observable<any> {
     const formData = new FormData();
     formData.append('name', productData.name);
+    formData.append('description', productData.description)
     formData.append('price', productData.price);
+    formData.append('availability', productData.availability)
+    formData.append('material', productData.material)
+    formData.append('color', productData.color)
+    formData.append('form', productData.form)
+    formData.append('productType', productData.productType)
+    formData.append('dimension', productData.dimension)
+
   
     if (file) {
       formData.append('image', file);

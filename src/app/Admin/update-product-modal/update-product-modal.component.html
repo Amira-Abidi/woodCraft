@@ -1,18 +1,38 @@
-<form [formGroup]="updateProductForm">
-  <label>Nom du produit:</label>
-  <input formControlName="name" type="text"/>
-  <br>
-  <label>Description:</label>
-  <input formControlName="description" type="text-area"/>
-  <br>
-  <label>Price:</label>
-  <input formControlName="price" type="number"/>
-  <br>
-  <label>Materiel:</label>
-  <input formControlName="material" type="text"/>
-  <br>
-  <label>Product Image:</label>
-  <input type="file" id="imageInput" accept="image/*" />
-  <br>
-  <button type="button" (click)="updateProduct()">Update Product</button>
-</form>
+<div class="cart-modal">
+  <div class="cart-content">
+    <button class="close-btn" (click)="closeModal()">×</button>
+      <form [formGroup]="updateProductForm">
+        <label>Nom du produit:</label>
+        <input formControlName="name" type="text" class="input-group"/>
+        <br>
+        <label>Description:</label>
+        <input formControlName="description" type="text-area" class="input-group"/>
+        <br>
+        <label>Price:</label>
+        <input formControlName="price" type="number" class="input-group"/>
+        <br>
+        <label>Availability:</label>
+        <input formControlName="availability" type="text" class="input-group"/>
+        <br>
+        <label>Materiel:</label>
+        <input formControlName="material" type="text" class="input-group"/>
+        <br>
+        <label>Color:</label>
+        <input formControlName="color" type="text" class="input-group"/>
+        <br>
+        <label>Shape:</label>
+        <input formControlName="form" type="text" class="input-group"/>
+        <br>
+        <label>Product Type:</label>
+        <input formControlName="productType" type="text" class="input-group"/>
+        <br>
+        <label>Dimension:</label>
+        <input formControlName="dimension" type="text" class="input-group"/>
+        <br>
+        <label>Product Image:</label>
+        <input type="file" id="imageInput" accept="image/*" />
+        <br>
+        <button type="button" (click)="updateProduct()">Update Product</button>
+      </form>
+    </div>
+</div>

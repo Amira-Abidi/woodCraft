@@ -19,6 +19,7 @@ export class DetailsComponent implements OnInit {
   productId: any;
   ProductAvailability: any = '';
   availability: string = '';
+  quantity = 1;
 
   constructor(
     private route: ActivatedRoute,
@@ -60,4 +61,12 @@ export class DetailsComponent implements OnInit {
       },
     });
   }
+
+  toggleWishlist(){}
+
+  buyNow(){}
+
+  incrementQuantity(){}
+
+  decrementQuantity(){}
 }

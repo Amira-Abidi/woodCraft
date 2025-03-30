@@ -27,10 +27,19 @@ p {
   width: 80px; /* Adjust button size for uniformity */
 }
 
-.details {
-  display: block;
-  font-size: 1rem;
-  color: #777;
+
+.name {
+  font-weight: bold;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #2B2118;
+}
+
+.desc {
+  font-weight: 500;
+  font-size: 14px;
+  color: #726659;
 }
 
 .nav-tabs .nav-link {
@@ -50,6 +59,75 @@ img {
 
 img:active {
   transform: scale(1.5); /* Zooms in */
+}
+
+.product-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* space between elements */
+}
+
+.quantity-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.quantity-input {
+  width: 60px;
+  height: 40px;
+  padding-right: 28px; /* room for up/down buttons */
+  text-align: center;
+}
+
+.quantity-controls {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.quantity-controls button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 24px;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-buy {
+  background-color: #b28f72; /* example color */
+  border: none;
+  padding: 0.6rem 1.2rem;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.btn-buy:hover {
+  background-color: #a07e63; /* slightly darker on hover */
+}
+
+.btn-heart {
+  background: #fff;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-heart:hover {
+  background-color: #f9f9f9;
 }
 
 

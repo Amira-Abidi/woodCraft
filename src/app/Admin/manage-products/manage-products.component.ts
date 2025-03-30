@@ -24,7 +24,11 @@ export class ManageProductsComponent {
           price: product.price || product._doc?.price,
           availability: product.availability || product._doc?.availability,
           description: product.description || product._doc?.description,
+          color: product.color || product._doc?.color,
           material: product.material || product._doc?.material,
+          form: product.form || product._doc?.form,
+          productType: product.productType || product._doc?.productType,
+          dimension: product.dimension || product._doc?.dimension,
           imageUrl: `${product.imageUrl}`
         }));
       },

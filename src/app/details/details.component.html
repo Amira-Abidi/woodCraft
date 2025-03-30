@@ -16,23 +16,46 @@
         <h4><b>Availability</b></h4>
         <div class="btn-group btn-group-toggle" data-toggle="buttons">
           <label class="btn btn-default text-center">
-            <input type="radio" name="size_option" id="size_option_s" autocomplete="off" />
+            <input type="radio" name="size_option" id="size_option_s" autocomplete="off" /><br>
             <span>{{availability}}</span><br/>
           </label>
         </div>
+        <br><br><br>
         <div class="details">
-          <br /><b>Couleur:</b> {{ productColor }}<br />
-          <b>Dimension:</b> {{ productDimension }}<br />
-          <b>Material:</b> {{ productMaterial }}<br />
-          <b>Product Type:</b> {{ productType }}<br />
-          <b>Shape:</b> {{ productShape }}
+          <div class = "name">Couleur: <span class="desc">{{ productColor }}</span></div><br>
+          <div class = "name">Dimension: <span class="desc">{{ productDimension }}</span></div><br>
+          <div class = "name">Material: <span class="desc">{{ productMaterial }}</span></div><br>
+          <div class = "name">Product Type:<span class="desc">{{ productType }}</span></div><br>
+          <div class = "name">Shape:<span class="desc">{{ productShape }}</span></div>
         </div>
         <br><br>
-        <div class="row">
-        <button mat-button class="BuyNow"><i class="fas fa-shopping-cart"></i>BUY NOW</button>
-        <button mat-button><i class="fas fa-shopping-cart"></i>BUY NOW</button>
-        <button mat-button><i class="fas fa-shopping-cart"></i>BUY NOW</button>
-      </div>
+        <div class="product-actions">
+          <!-- Quantity Input + Up/Down Buttons -->
+          <div class="quantity-wrapper">
+            <input
+              type="number"
+              [(ngModel)]="quantity"
+              class="quantity-input"
+              min="1"
+            />
+            <div class="quantity-controls">
+              <button (click)="incrementQuantity()">&#9650;</button>
+              <button (click)="decrementQuantity()">&#9660;</button>
+            </div>
+          </div>
+        
+          <!-- Buy Now Button -->
+          <button class="btn-buy" (click)="buyNow()">
+            <i class="fas fa-shopping-cart"></i>
+            Buy Now
+          </button>
+        
+          <!-- Heart (Wishlist) Button -->
+          <button class="btn-heart" (click)="toggleWishlist()">
+            <i class="far fa-heart"></i>
+          </button>
+        </div>
+        
       </div>
     </div>
   </div>

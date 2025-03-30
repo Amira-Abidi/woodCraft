@@ -6,32 +6,23 @@
             </div>
 
             <div class="form-group">
-                <label>Full Name</label>
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="fas fa-user mr-2"></i></span>
-                    </div>
-                    <input type="text" class="form-control">
-                </div>
-
                 <label>Email</label>
                 <div class="input-group">
                     <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="fas fa-envelope mr-2"></i></span>
+                        <span class="input-group-email"><i class="fas fa-envelope mr-2"></i></span>
                     </div>
-                    <input type="text" class="form-control">
+                    <input type="email" class="form-control" [(ngModel)]="email">
                 </div>
 
-                <label>Phone number</label>
+                <label>Message</label>
                 <div class="input-group">
                     <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                        <span class="input-group-textarea"><i class="fas fa-comment mr-2"></i></span>
                     </div>
-                    <input type="text" class="form-control"
-                        data-inputmask="&quot;mask&quot;: &quot;(999) 999-9999&quot;" data-mask>
+                    <textarea class="form-control" [(ngModel)]="msg"></textarea>
                 </div>
                 <br>
-                <button type="submit" class="btn">Send</button>
+                <button type="submit" class="btn" (click)="sendMessage()" *ngIf="!isLoading">Send</button>
 
             </div>
         </div>

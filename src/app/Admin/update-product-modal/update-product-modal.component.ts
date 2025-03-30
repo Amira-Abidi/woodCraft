@@ -21,7 +21,15 @@ export class UpdateProductModalComponent {
   ) {
     this.updateProductForm = this.fb.group({
       name: [this.data.product?.name || '', []],
+      description: [this.data.product?.description || '', []],
       price: [this.data.product?.price || '', []],
+      availability: [this.data.product?.availability || false, []],
+      material: [this.data.product?.material || '', []],
+      color: [this.data.product?.color || '', []],
+      form: [this.data.product?.form || '', []],
+      productType: [this.data.product?.productType || '', []],
+      dimension: [this.data.product?.dimension || '', []],
+
     });
   }
 
@@ -38,7 +46,15 @@ export class UpdateProductModalComponent {
   
     const updatedData = {
       name: this.updateProductForm.get('name')?.value,
+      description: this.updateProductForm.get('description')?.value,
       price: this.updateProductForm.get('price')?.value,
+      availability: this.updateProductForm.get('availability')?.value,
+      material: this.updateProductForm.get('material')?.value,
+      color: this.updateProductForm.get('color')?.value,
+      form: this.updateProductForm.get('form')?.value,
+      productType: this.updateProductForm.get('productType')?.value,
+      dimension: this.updateProductForm.get('dimension')?.value,
+
     };
   
     const fileInput = document.getElementById('imageInput') as HTMLInputElement;
@@ -55,7 +71,6 @@ export class UpdateProductModalComponent {
       }
     });
   }
-  
   
   closeModal(): void {
     this.dialogRef.close();
