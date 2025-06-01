@@ -18,7 +18,7 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { DetailsComponent } from './details/details.component';
 import { CartModalComponent } from './cart-modal/cart-modal.component';
 import { LoginComponent } from './login/login.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { AddProductComponent } from './Admin/add-product/add-product.component';
 import { UpdateProductModalComponent } from './Admin/update-product-modal/update-product-modal.component';
 import { ManageProductsComponent } from './Admin/manage-products/manage-products.component';
@@ -31,7 +31,6 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { ThankYouComponent } from './thank-you/thank-you.component';
 import { WhatWeOfferComponent } from './what-we-offer/what-we-offer.component';
 import { NgxPaginationModule } from 'ngx-pagination';
-
 
 @NgModule({
   declarations: [

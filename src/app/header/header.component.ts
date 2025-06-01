@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
-import { io } from 'socket.io-client';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -16,11 +15,22 @@ export class HeaderComponent {
 
   itemCount = 0;
 
+  languages = [
+    { code: 'en', name: 'English', flag: '🇬🇧' },
+    { code: 'es', name: 'Español', flag: '🇪🇸' },
+  ];
+
+  currentLanguage = 'en';
 
 
   constructor(private authService: AuthService, private router: Router) {
     const storedCart = JSON.parse(localStorage.getItem('cart') || '[]');
     this.itemCount = storedCart.length;
+
+    const savedLanguage = localStorage.getItem('language');
+    if (savedLanguage) {
+      this.currentLanguage = savedLanguage;
+    }
   }
 
   ngOnInit() {

@@ -22,6 +22,7 @@
     "@angular/router": "^16.2.0",
     "admin-lte": "3.0",
     "angular-animations": "^0.11.0",
+    "bootstrap": "^5.3.4",
     "browser-module": "^0.0.1",
     "firebase-tools": "^13.10.2",
     "gsap": "^3.12.7",

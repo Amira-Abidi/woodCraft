@@ -18,7 +18,7 @@
             <a href="contact" class="nav-link">Contact</a>
           </li>
           <li class="nav-item">
-            <a href="productList" class="nav-link">Product List</a>
+            <a href="productList" class="nav-link">Products</a>
           </li>
           <li class="nav-item" *ngIf="!role">
             <a href="login" class="nav-link">Login</a>
@@ -32,11 +32,25 @@
           <li class="nav-item" *ngIf="role === 'admin'">
             <a href="AddProduct" class="nav-link">Add Product</a>
           </li>
-  
+
           <li class="nav-item" *ngIf="role">
             <a (click)="logout()" class="nav-link" style="cursor: pointer;">Logout</a>
           </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle"  id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Language
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+              <li><a class="dropdown-item" onclick="translatePage('en')">🇬🇧 English</a></li>
+              <li><a class="dropdown-item" onclick="translatePage('fr')">🇫🇷 Français</a></li>
+              <li><a class="dropdown-item" onclick="translatePage('es')">🇪🇸 Español</a></li>
+              <li><a class="dropdown-item" onclick="translatePage('de')">🇩🇪 Deutsch</a></li>
+            </ul>
+          </li>
         </ul>
+        <div id="google_translate_element" style="display: none;"></div>
+        
       </div>
     </nav>
   </header>
